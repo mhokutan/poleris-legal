@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Get Poleris</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .store { display: inline-block; padding: 12px 20px; border: 1px solid #D9A94B; border-radius: 10px; font-family: system-ui, sans-serif; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="star">&#10022; Poleris</div>
+</header>
+<h1>Poleris: Manifest &amp; Rituals</h1>
+<p>Write what you want. Come back to it every day with a small step, a short note and a quiet minute.</p>
+<div class="stores">
+  <a class="store" id="ios" href="https://apps.apple.com/app/id6792844860">Download on the App Store</a>
+  <a class="store" id="android" href="https://play.google.com/store/apps/details?id=com.miapera.poleris">Get it on Google Play</a>
+</div>
+<p class="muted">No cookies and no tracking on this page.</p>
+</div>
+<script>
+  // Cihaza göre mağazaya yönlendirir. Paylaşım kartındaki utm_* değerleri sadece Play'in
+  // kurulum referansına aktarılır; kimlik bilgisi yoktur.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var params = new URLSearchParams(location.search);
+    var utm = [];
+    params.forEach(function (v, k) { if (/^utm_(source|medium|campaign)$/.test(k)) utm.push(k + '=' + v); });
+    var play = document.getElementById('android');
+    if (utm.length) play.href += '&referrer=' + encodeURIComponent(utm.join('&'));
+    if (/android/i.test(ua)) location.replace(play.href);
+    else if (/iphone|ipad|ipod|macintosh.*mobile/i.test(ua)) location.replace(document.getElementById('ios').href);
+  })();
+</script>
+</body>
+</html>
