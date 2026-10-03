@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Poleris</title>
+<title>Privacy Policy | Poleris</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,47 +17,71 @@
   </nav>
 </header>
 <h1>Privacy Policy</h1>
-<p class="muted">Last updated: September 18, 2026</p>
+<p class="muted">Last updated: October 3, 2026 (version 2.0)</p>
 
-<p>This Privacy Policy explains how Poleris ("we", "us") collects, uses, and protects your information when you use the Poleris mobile application (the "App").</p>
+<p>This Privacy Policy explains how Poleris ("we", "us") collects, uses, and protects your information when you use the Poleris mobile application on iOS and Android (the "App").</p>
+
+<h2>Information that stays on your device</h2>
+<p>Most of what you create in Poleris is stored only on your device and is not sent to us: your intentions, tasks, daily ritual and evening ritual entries, gratitude lines, 369 notes, "Manifested" notes, your own affirmations, vision board photos and drawings, compatibility cards and any friend's birth details you enter for them, reminder times, your stats, badges, theme and language. If you delete the App, this data is deleted with it. You can save a copy at any time in Profile &rarr; "Export my data".</p>
 
 <h2>Information we collect</h2>
 <ul>
-  <li><strong>Content you create.</strong> Your intentions, tasks, journal and gratitude notes, daily ritual entries, affirmation preferences, vision board photos and drawings, and compatibility cards are stored on your device.</li>
-  <li><strong>Account information (optional).</strong> If you create an account: your email address and a password (stored in hashed form by our authentication provider), and a display name. An account is not required to use the App.</li>
-  <li><strong>Birth information (optional).</strong> If you choose to add them in Profile: your birth date, and optionally your birth time and birth place, used only to calculate your natal chart and personalize your daily note. This stays on your device unless you create an account, in which case it is synced to your private cloud profile.</li>
-  <li><strong>Friends' birth details (optional).</strong> If you create a compatibility card for a friend, the birth details you enter are stored on your device to generate that card.</li>
-  <li><strong>Reminders.</strong> Reminder times you set are stored on your device and delivered as local notifications. We do not operate a push-notification server.</li>
+  <li><strong>Account information (optional).</strong> If you create an account: your email address and, if you choose email sign-in, a password (stored in hashed form by our authentication provider). If you use Sign in with Apple or Google, we receive the email address (which may be an Apple private relay address) and, if provided, the name that service shares with us. An account is not required to use most of the App; it is required for Friends.</li>
+  <li><strong>Profile.</strong> If you have an account: the display name you enter, and the handle you choose so friends can find you.</li>
+  <li><strong>Birth information (optional).</strong> If you add it in Profile: your birth date, and optionally your birth time and birth place (a city you pick from a list, with that city's coordinates). It is used only to personalize your daily note and compatibility cards. Without an account it stays on your device; with an account it is synced to your private profile.</li>
+  <li><strong>Friends features (optional).</strong> If you use Friends: your friend requests and friendships (including blocks), and the support messages and affirmation cards you send and receive. Support messages are fixed, ready-made messages ("Keep going", "Proud of you", "Sending calm"); Poleris has no free-text chat. Your friends see your display name and handle.</li>
+  <li><strong>Streak sharing (only with your consent).</strong> Streak sharing is off by default. If you turn on "Share my streak with friends", your friends can see your current day streak, and nothing else. When you turn it off, the shared number is reset.</li>
+  <li><strong>Reports.</strong> If you report a user, we store who reported whom, the reason you picked (spam, harassment, inappropriate name, something else) and the time. Reporting also blocks the user.</li>
+  <li><strong>Purchases.</strong> Payments are handled by Apple (App Store) or Google (Google Play); we never see your payment details. On Android, to confirm your Premium subscription, we verify the purchase with Google and store the product, a purchase token, order number, status and expiry date with your account.</li>
+  <li><strong>Server logs.</strong> Our backend provider keeps short-term technical logs (such as IP address and request time) for security and troubleshooting.</li>
 </ul>
+
+<h2>Notifications</h2>
+<p>All reminders (daily ritual, daily note, evening, task and trial-end reminders) are local notifications scheduled on your device. We do not run a push-notification server. Support messages from friends appear in the in-app Inbox when you open the App.</p>
 
 <h2>How we use your information</h2>
 <ul>
-  <li>To store and show your intentions, tasks, notes, rituals and vision board.</li>
-  <li>To schedule the local reminders you ask for.</li>
-  <li>To calculate and display your natal chart, daily note and compatibility cards, if you choose to add birth details.</li>
-  <li>To operate accounts, sync and security (via Supabase).</li>
+  <li>To provide accounts, sign-in and your profile.</li>
+  <li>To run Friends: finding friends by handle, delivering support messages and cards, showing streaks you chose to share, and blocking.</li>
+  <li>To keep the community safe: reviewing reports and removing inappropriate names or abusive accounts.</li>
+  <li>To personalize your daily note and compatibility cards, if you add birth details.</li>
+  <li>To confirm your Premium subscription.</li>
 </ul>
 
 <h2>What we do not do</h2>
 <ul>
   <li>We do not sell your personal information.</li>
-  <li>We do not show third-party advertising.</li>
-  <li>We do not send your content to any AI or language-model service. Poleris has no chat feature and makes no AI calls.</li>
-  <li>We do not use analytics or tracking SDKs.</li>
+  <li>We do not show advertising and do not track you across other apps or websites.</li>
+  <li>We do not use analytics, advertising or crash-reporting SDKs.</li>
+  <li>We do not send your content to any AI or language-model service. Poleris makes no AI calls.</li>
+  <li>We do not access your device location, contacts, camera or microphone.</li>
 </ul>
 
 <h2>Service providers</h2>
-<p>We use one processor to run Poleris: Supabase (authentication, database and the account-deletion function). It receives only the data needed to provide accounts and sync. Purchases are handled by Apple; we never see your payment details.</p>
+<ul>
+  <li><strong>Supabase</strong>: authentication, database and server functions (account deletion, purchase verification).</li>
+  <li><strong>Apple and Google</strong>: sign-in (if you choose it), in-app purchases, and, on account deletion, revoking your Sign in with Apple token.</li>
+</ul>
+<p>These providers process data only to provide their service to us. Your data may be processed on servers outside your country.</p>
+
+<h2>How long we keep data</h2>
+<ul>
+  <li>Account, profile, birth information, friendships and purchase records: until you delete your account.</li>
+  <li>Support messages and sent cards: 30 days, then deleted automatically.</li>
+  <li>Reports: until the reporting or the reported account is deleted.</li>
+</ul>
 
 <h2>Your choices and rights</h2>
 <ul>
-  <li>You can use Poleris without creating an account; your data then remains on your device.</li>
-  <li>You can delete your account at any time in Profile &rarr; Account &rarr; Delete account. This permanently removes your cloud profile and account.</li>
-  <li>You can request a copy or deletion of your data by contacting us (see Support).</li>
+  <li>You can use most of Poleris without an account; your data then stays on your device.</li>
+  <li><strong>Delete your account</strong> at any time in the App: Profile &rarr; "Delete account" &rarr; "Continue" &rarr; "Delete permanently". This permanently deletes your account and all server data listed above. You can also <a href="support.html#delete-account">request deletion by email</a>.</li>
+  <li>Edit your birth details in Profile, and turn streak sharing on or off in Profile &rarr; "Friends".</li>
+  <li>Block or report anyone from the Friends screen.</li>
+  <li>Depending on where you live, you may have rights to access, correct, delete or port your data, or to object to processing. Contact us to use them (see Support).</li>
 </ul>
 
 <h2>Children</h2>
-<p>Poleris is not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
+<p>Poleris is not directed to children. You must be at least 13 years old to use the App (or older where local law requires). We do not knowingly collect personal information from children under 13; if you believe a child has created an account, contact us and we will delete it.</p>
 
 <h2>Important note</h2>
 <p>Poleris provides content for reflection, habit-building and entertainment. It does not provide medical, psychological, legal, or financial advice.</p>
@@ -66,7 +90,7 @@
 <p>We may update this policy from time to time. Material changes will be announced in the App.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy: see the <a href="support.html">support page</a>.</p>
+<p>Questions about this policy or your data: see the <a href="support.html">support page</a>.</p>
 </div>
 </body>
 </html>
