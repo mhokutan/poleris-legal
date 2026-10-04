@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Poleris account</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<header><div class="star">&#10022; Poleris</div></header>
+<h1 id="title">Email confirmed</h1>
+<p id="body">Your email is confirmed. Open Poleris and sign in with your email and password.</p>
+<p><a id="open" href="poleris://">Open Poleris</a></p>
+<p class="muted" id="note">You can close this page.</p>
+</div>
+<script>
+  // Supabase e-posta doğrulama dönüşü. Hata varsa (#error=...) dile göre açıklama gösterir.
+  (function () {
+    var lang = (navigator.language || 'en').slice(0, 2);
+    var T = {
+      en: { ok: ['Email confirmed', 'Your email is confirmed. Open Poleris and sign in with your email and password.'],
+            err: ['This link has expired', 'This link was already used or is too old. If you already confirmed, just open Poleris and sign in. If sign-in fails, sign up again in the app to get a new email.'], open: 'Open Poleris', note: 'You can close this page.' },
+      es: { ok: ['Correo confirmado', 'Tu correo está confirmado. Abre Poleris e inicia sesión con tu correo y contraseña.'],
+            err: ['Este enlace venció', 'Este enlace ya se usó o es muy antiguo. Si ya confirmaste, abre Poleris e inicia sesión. Si no puedes, regístrate otra vez en la app para recibir un correo nuevo.'], open: 'Abrir Poleris', note: 'Puedes cerrar esta página.' },
+      pt: { ok: ['E-mail confirmado', 'Seu e-mail foi confirmado. Abra o Poleris e entre com seu e-mail e senha.'],
+            err: ['Este link expirou', 'Este link já foi usado ou é muito antigo. Se você já confirmou, abra o Poleris e entre. Se não conseguir, cadastre-se de novo no app para receber um novo e-mail.'], open: 'Abrir o Poleris', note: 'Você pode fechar esta página.' },
+      tr: { ok: ['E-posta doğrulandı', 'E-postan doğrulandı. Poleris\'i aç ve e-posta ve şifrenle giriş yap.'],
+            err: ['Bu bağlantının süresi doldu', 'Bu bağlantı daha önce kullanılmış ya da çok eski. Zaten doğruladıysan Poleris\'i açıp giriş yap. Giriş olmazsa uygulamada yeniden kayıt ol, yeni e-posta gelir.'], open: 'Poleris\'i aç', note: 'Bu sayfayı kapatabilirsin.' }
+    };
+    var t = T[lang] || T.en;
+    var hash = new URLSearchParams(location.hash.slice(1));
+    var query = new URLSearchParams(location.search);
+    var failed = hash.get('error') || query.get('error');
+    var pair = failed ? t.err : t.ok;
+    document.getElementById('title').textContent = pair[0];
+    document.getElementById('body').textContent = pair[1];
+    document.getElementById('open').textContent = t.open;
+    document.getElementById('note').textContent = t.note;
+    document.documentElement.lang = T[lang] ? lang : 'en';
+    // Erişim belirteçlerini adres çubuğunda bırakma.
+    if (location.hash) history.replaceState(null, '', location.pathname);
+  })();
+</script>
+</body>
+</html>
