@@ -25,13 +25,18 @@
 <p class="muted">No cookies and no tracking on this page.</p>
 </div>
 <script>
-  // Cihaza göre mağazaya yönlendirir. Paylaşım kartındaki utm_* değerleri sadece Play'in
-  // kurulum referansına aktarılır; kimlik bilgisi yoktur.
+  // Cihaza göre mağazaya yönlendirir. Kaynak bilgisi (utm_* veya kısa `ct`, ör. bio_tiktok,
+  // pin_03, invite) Play'in kurulum referansına, `ct` ayrıca App Store bağlantısına eklenir.
+  // Sadece harf, rakam, _ ve - kabul edilir; kimlik bilgisi yoktur.
   (function () {
     var ua = navigator.userAgent || '';
     var params = new URLSearchParams(location.search);
+    var safe = function (v) { return /^[A-Za-z0-9_-]{1,40}$/.test(v || '') ? v : ''; };
     var utm = [];
-    params.forEach(function (v, k) { if (/^utm_(source|medium|campaign)$/.test(k)) utm.push(k + '=' + v); });
+    params.forEach(function (v, k) { if (/^utm_(source|medium|campaign)$/.test(k) && safe(v)) utm.push(k + '=' + v); });
+    var ct = safe(params.get('ct'));
+    if (ct && !params.get('utm_source')) utm.push('utm_source=' + ct, 'utm_medium=link');
+    if (ct) document.getElementById('ios').href += '?ct=' + ct;
     var play = document.getElementById('android');
     if (utm.length) play.href += '&referrer=' + encodeURIComponent(utm.join('&'));
     if (/android/i.test(ua)) location.replace(play.href);
