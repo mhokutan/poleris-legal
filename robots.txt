@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://mhokutan.github.io/poleris-legal/sitemap.xml
+Disallow: /tiktok/
